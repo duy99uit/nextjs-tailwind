@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           </button>
         </span>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Config tailwind <a href="https://nextjs.org">dễ vl!</a>
         </h1>
 
         <p className={styles.description}>
