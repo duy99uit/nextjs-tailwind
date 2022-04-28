@@ -6,8 +6,9 @@ import {
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
-
+import Image from "next/image";
 import { navigation } from "./dataFake";
+import logo from "@/assets/images/logo/logo.jpg";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
@@ -16,7 +17,7 @@ export default function MainHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white ">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
@@ -67,7 +68,7 @@ export default function MainHeader() {
                         className={({ selected }) =>
                           classNames(
                             selected
-                              ? "text-indigo-600 border-indigo-600"
+                              ? "text-sky-600 border-sky-600"
                               : "text-gray-900 border-transparent",
                             "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
                           )
@@ -91,10 +92,13 @@ export default function MainHeader() {
                             className="group relative text-sm"
                           >
                             <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                              <img
+                              <Image
                                 src={item.imageSrc}
-                                alt={item.imageAlt}
-                                className="object-center object-cover"
+                                alt="Picture of the author"
+                                // width={500}
+                                // height={500}
+                                blurDataURL="data:..."
+                                placeholder="blur" // Optional blur-up while loading
                               />
                             </div>
                             <a
@@ -175,27 +179,13 @@ export default function MainHeader() {
                   </a>
                 </div>
               </div>
-
-              <div className="border-t border-gray-200 py-6 px-4">
-                <a href="#" className="-m-2 p-2 flex items-center">
-                  <img
-                    src="https://tailwindui.com/img/flags/flag-canada.svg"
-                    alt=""
-                    className="w-5 h-auto block flex-shrink-0"
-                  />
-                  <span className="ml-3 block text-base font-medium text-gray-900">
-                    CAD
-                  </span>
-                  <span className="sr-only">, change currency</span>
-                </a>
-              </div>
             </div>
           </Transition.Child>
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white">
-        <p className="bg-indigo-600 h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
+      <header className="fixed top-0 left-0 w-full z-10 bg-white">
+        <p className="bg-black h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
           Get free delivery on orders over $100
         </p>
 
@@ -218,10 +208,14 @@ export default function MainHeader() {
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
                   <span className="sr-only">Workflow</span>
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-                    alt=""
+
+                  <Image
+                    src={logo}
+                    alt="Picture of the author"
+                    width={32}
+                    height={32}
+                    blurDataURL="data:..."
+                    placeholder="blur" // Optional blur-up while loading
                   />
                 </a>
               </div>
@@ -237,7 +231,7 @@ export default function MainHeader() {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-indigo-600 text-indigo-600"
+                                  ? "border-sky-600 text-sky-600"
                                   : "border-transparent text-gray-700 hover:text-gray-800",
                                 "relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
                               )}
@@ -256,7 +250,6 @@ export default function MainHeader() {
                             leaveTo="opacity-0"
                           >
                             <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div
                                 className="absolute inset-0 top-1/2 bg-white shadow"
                                 aria-hidden="true"
@@ -265,17 +258,19 @@ export default function MainHeader() {
                               <div className="relative bg-white">
                                 <div className="max-w-7xl mx-auto px-8">
                                   <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
-                                    <div className="col-start-2 grid grid-cols-2 gap-x-8">
+                                    <div className="col-start-2 grid grid-cols-2 gapidx-8">
                                       {category.featured.map((item) => (
                                         <div
                                           key={item.name}
                                           className="group relative text-base sm:text-sm"
                                         >
                                           <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                            <img
+                                            <Image
                                               src={item.imageSrc}
-                                              alt={item.imageAlt}
-                                              className="object-center object-cover"
+                                              alt="Picture of the author"
+                                              layout="intrinsic"
+                                              blurDataURL="data:..."
+                                              placeholder="blur" // Optional blur-up while loading
                                             />
                                           </div>
                                           <a
@@ -364,21 +359,6 @@ export default function MainHeader() {
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Create account
-                  </a>
-                </div>
-
-                <div className="hidden lg:ml-8 lg:flex">
-                  <a
-                    href="#"
-                    className="text-gray-700 hover:text-gray-800 flex items-center"
-                  >
-                    <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
-                      alt=""
-                      className="w-5 h-auto block flex-shrink-0"
-                    />
-                    <span className="ml-3 block text-sm font-medium">CAD</span>
-                    <span className="sr-only">, change currency</span>
                   </a>
                 </div>
 

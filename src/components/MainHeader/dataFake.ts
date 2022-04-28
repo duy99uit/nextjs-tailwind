@@ -1,22 +1,25 @@
+import image1 from "@/assets/images/acqua-di-gio.jpg";
+import image2 from "@/assets/images/jordanWofl.png";
+import image3 from "@/assets/images/dior/1.jpg";
+import image4 from "@/assets/images/dior/2.jpg";
+
 export const navigation = {
   categories: [
     {
-      id: "women",
-      name: "Women",
+      id: "men",
+      name: "Trending",
       featured: [
         {
-          name: "New Arrivals",
+          name: "Acqua Di Gio Pour Home",
           href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
+          imageSrc: image1,
           imageAlt:
             "Models sitting back to back, wearing Basic Tee in black and bone.",
         },
         {
-          name: "Basic Tees",
+          name: "Jordan 1 Wofl Grey Aluminum",
           href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
+          imageSrc: image2,
           imageAlt:
             "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
         },
@@ -69,16 +72,14 @@ export const navigation = {
         {
           name: "New Arrivals",
           href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
+          imageSrc: image3,
           imageAlt:
             "Drawstring top with elastic loop closure and textured interior padding.",
         },
         {
           name: "Artwork Tees",
           href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
+          imageSrc: image4,
           imageAlt:
             "Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.",
         },
