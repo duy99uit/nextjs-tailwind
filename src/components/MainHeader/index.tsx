@@ -262,7 +262,7 @@ export default function MainHeader() {
                                       {category.featured.map((item) => (
                                         <div
                                           key={item.name}
-                                          className="group relative text-base sm:text-sm"
+                                          className="group relative text-base sm:text-sm px-1"
                                         >
                                           <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
                                             <Image
